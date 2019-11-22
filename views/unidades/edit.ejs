@@ -1,0 +1,53 @@
+<%- include('../partials/header') %>
+
+<div class='container my-4'>
+  <h1 class='text-center my-5'>Editar Unidades</h1> 
+  <a href="/"><button class='btn btn-secondary' type="button">Voltar</button></a>
+    
+  <table class="table table-hover table-bordered table-sm mt-5">
+    <thead>
+      <tr class='text-center'>
+        <th scope="col">UL</th>
+        <th scope="col">Local</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">N. Bens</th>
+        <th scope="col">Termo</th>
+        <th scope="col">Todos Lidos</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unidades.map(unidade => { %>
+      <tr class='text-center'>
+        <th scope="row"><%= unidade.ul %></th>
+        <td><%= unidade.local %></td>
+        <td><%= unidade.responsavel %></td>
+        <td><%= unidade.bens %></td>
+        <td>
+          <form method='post'>
+            <select class='form-control' id='termo' name='termo' value='<%= unidade.termo %>'>
+              <% options.forEach( option => { %>
+              <option value='<%= option.id %>' <% if(option.id === unidade.termo) { %> selected='selected' <% } %> ><%= option.name %></option>
+            <% }) %>
+          </select>  
+        </td>
+        <td>
+          <select class='form-control' id='localizados' name='localizados' value='<%= unidade.localizados %>'>
+            <% labels.forEach( label => { %>
+              <option value='<%= label.id %>' <% if(label.id === unidade.localizados) { %> selected='selected' <% } %> ><%= label.name %></option>
+            <% }) %>
+          </select>
+        </td>
+        <td><button class="btn btn-outline-success" type="submit">Salvar</button></td>  
+      </tr>
+      <tr class='text-center'>
+        <td colspan="6"><textarea class='form-control' rows="2" name='observacao' value='<%= unidade.observacao %>'></textarea></td>
+        <td>Inserir Comentário</td>
+      </tr>
+      </form>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>

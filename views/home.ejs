@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+  <div class='container my-4 '>
+      <h1 class='text-center my-5'>Gerenciamento de Entregas e Pendências</h1>
+          <h3 class='text-center'>Encontre uma Unidade</h3>
+        <div class="row alert alert-info pesquisa">
+          <div class="col-md-12">
+          <h6>Pesquisar por Nome da Unidade</h6>
+            <form class='formName' action='/unidades/search' >
+              <div class="input-group">
+                  <input class="form-control border-secondary py-2" type="search" name="term" placeholder="Digite o Nome da Unidade">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="submit">
+                          <i class="fa fa-search"></i>
+                      </button>
+                  </div>
+              </div>
+            </form>  
+          </div>
+        </div>
+       
+        <div class="row alert alert-info mt-5">
+          <div class="col-md-12">
+          <h6>Pesquisar por Responsável da Unidade</h6>
+            <form class='formName' action='/unidades/searchResp' >
+              <div class="input-group">
+                  <input class="form-control border-secondary py-2" type="search" name="resp" placeholder="Digite o Nome do Responsável pela Unidade">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="submit">
+                          <i class="fa fa-search"></i>
+                      </button>
+                  </div>
+              </div>
+            </form>  
+          </div>
+        </div>
+  </div>
+<%- include('partials/footer') %>

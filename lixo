@@ -1,0 +1,61 @@
+"1"	"Sede"	"2509"	"Almoxarifado"	"Robson Luiz"	"10"	\N	\N	"2019-11-21 11:47:20"	"2019-11-21 11:47:21"
+"2"	"Sede"	"250916"	"Patrimonio"	"Lya Petry"	"15"	\N	\N	"2019-11-21 11:47:51"	"2019-11-21 11:47:51"
+"3"	"Anexos"	"250916"	"Sala de Aula"	"Dafne"	"20"	\N	\N	"2019-11-21 11:49:11"	"2019-11-21 11:49:04"
+"4"	"Zonas"	"1010"	"Zona 025"	"Fulano"	"30"	\N	\N	"2019-11-21 12:02:00"	"2019-11-21 12:02:01"
+"5"	"Outros"	"2020"	"Depósito de Urnas"	"Cicrano Júnior"	"120"	\N	\N	"2019-11-21 12:03:09"	"2019-11-21 12:03:09"
+
+
+<td>
+          <form>
+            <select class='form-control' id='termo' name='termo'>
+              <option value='pendente'>Pendente</option>
+              <option value='ok'>Entregue</option>
+            </select>  
+        </td>
+        <td>
+          <select class='form-control' id='localizados' name='localizados'>
+            <option value='pendente'>Bens não Lidos</option>
+            <option value='ok'>Todos Lidos</option>
+          </select>
+        </td>
+
+      View com os 4 locais. Colocar no link Unidades
+
+
+      <%- include('partials/header') %>
+  <div class='container my-4'>
+      <h1 class='text-center my-5'>Gerenciamento de Entregas e Pendências</h1>
+      <div class='row'>
+        <div class='col-md-6'>
+          <a href="unidades/sede" class='text-secondary text-decoration-none'>
+            <div class='alert alert-primary'>
+              <h3 class='text-center'>Sede</h3>
+            </div>
+          </a>
+        </div>
+        <div class='col-md-6'>
+          <a href="unidades/zonas" class='text-secondary text-decoration-none'>
+            <div class='alert alert-primary'>
+              <h3 class='text-center'>Zonas</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-md-6'>
+          <a href="unidades/anexos" class='text-secondary text-decoration-none'>
+            <div class='alert alert-danger'>
+              <h3 class='text-center'>Anexos</h3>
+            </div>
+          </a>
+        </div>
+        <div class='col-md-6'>
+          <a href="unidades/outros" class='text-secondary text-decoration-none'>
+            <div class='alert alert-danger'>
+              <h3 class='text-center'>Outros Locais</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+  </div>
+<%- include('partials/footer') %>

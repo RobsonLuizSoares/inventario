@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+
+.homePage {
+  width: 100vh;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 28%;
+}
+
+.inputName {
+  width: 260px;
+  height: 60px;
+
+}
+
+.inputButton {
+  margin-left: 80px;
+}
+
+.pesquisa {
+  margin-top: 6%;
+}
+
+.textNav {
+  font-size: 1.3em;
+}
+
+.textNav:hover {
+  color: rgb(83, 51, 226);
+}
+
+/* .formName {
+  background-color: red;
+  margin-left: 50%;
+}
+
+.formResp {
+  background-color: blue;
+  margin-left: 50%;
+} */

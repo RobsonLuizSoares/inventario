@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<div class='container-fluid my-4' style='max-width:80%'>
+  <h1 class='text-center my-5'>Todas as Unidades</h1> 
+  <a href="/"><button class='btn btn-secondary' type="button">Voltar</button></a>
+    
+  <table class="table table-hover table-bordered table-sm mt-5" >
+    <thead>
+      <tr class='text-center'>
+        <th scope="col">UL</th>
+        <th scope="col">Local</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">N. Bens</th>
+        <th scope="col">Entrega dos Termo</th>
+        <th scope="col">Leitura dos Bens</th>
+        <th scope="col">Editar</th>
+        <th scope="row">Observação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unidades.map(unidade => { %>
+      <tr class='text-center'>
+        <th scope="row"><%= unidade.ul %></th>
+        <td><%= unidade.local %></td>
+        <td><%= unidade.nome %></td>
+        <td><%= unidade.responsavel %></td>
+        <td><%= unidade.bens %></td>
+        <td><%= unidade.termo %></td>
+        <td><%= unidade.localizados %></td>
+        <td><a href="/unidades/edit/<%= unidade.id %>"><button class="btn btn-sm btn-outline-primary" type="submit">Editar</button></a></td>
+        <td colspan='6'>
+          <button class="btn btn-sm btn-primary" type="button" data-toggle="collapse" data-target="#msg" aria-expanded="false" aria-controls="collapseExample">
+            Ler
+          </button>
+          
+          <div class="collapse" id="msg">
+            <div class="card card-body">
+            <%= unidade.observacao %>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('partials/footer') %>

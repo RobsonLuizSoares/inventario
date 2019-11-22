@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class='container my-4'>
+  <h1 class='text-center my-5'>Unidades da Sede</h1> 
+  <a href="javascript:history.go(-1)"><button class='btn btn-secondary' type="button">Voltar</button></a>
+    
+  <table class="table table-hover table-bordered table-sm mt-5">
+    <thead>
+      <tr class='text-center'>
+        <th scope="col">UL</th>
+        <th scope="col">Local</th>
+        <th scope="col">Responsável</th>
+        <th scope="col">N. Bens</th>
+        <th scope="col">Termo</th>
+        <th scope="col">Todos Lidos</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unidadesSede.map(unidade => { %>
+      <tr class='text-center'>
+        <th scope="row"><%= unidade.ul %></th>
+        <td><%= unidade.local %></td>
+        <td><%= unidade.responsavel %></td>
+        <td><%= unidade.bens %></td>
+        <td><%= unidade.termo %></td>
+        <td><%= unidade.localizados %></td>
+        <td><a href="/unidades/edit/<%= unidade.id %>"><button class="btn btn-sm btn-outline-primary" type="submit">Editar</button></a></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('../partials/footer') %>
+
